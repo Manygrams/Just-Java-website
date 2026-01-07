@@ -99,12 +99,13 @@
 
         .nav-item:hover {
             background: #F5F5F5;
-            background-clip: text;
+            background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
             -webkit-background-clip: text;
-            color: transparent;
-            background-image: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
+        /* Updated Book a call button to match exact specifications */
         .book-call-btn {
             display: inline-flex;
             align-items: center;
@@ -185,8 +186,8 @@
         .hero-headline {
             font-family: 'Creato Display', sans-serif;
             font-weight: 800;
-            font-size: 80px;
-            line-height: 100px;
+            font-size: 64px;
+            line-height: 80px;
             color: #070F29;
             text-align: left;
         }
@@ -623,7 +624,7 @@
         .section-title {
             font-family: 'Creato Display', sans-serif;
             font-weight: 800;
-            font-size: clamp(36px, 6vw, 76px);
+            font-size: clamp(32px, 5vw, 56px);
             line-height: 1.2;
             text-align: center;
             color: #070F29;
@@ -721,7 +722,7 @@
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
-            padding: 96px 160px;
+            padding: 64px 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -731,20 +732,22 @@
         .cards-section {
             width: 100%;
             max-width: 1600px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            padding: 40px 0;
         }
 
         .serve-card {
             width: 100%;
-            min-height: 480px;
-            max-width: 800px;
+            min-width: 320px;
+            max-width: 420px;
+            min-height: 450px;
             padding: 24px;
             border-radius: 48px;
-            border: 1px solid;
-            border-image-source: linear-gradient(153.03deg, rgba(7, 15, 41, 0.5) 0%, rgba(7, 15, 41, 0) 99.98%);
+            border: 1px solid rgba(7, 15, 41, 0.2);
             box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
@@ -753,24 +756,29 @@
             transition: transform 0.3s ease;
         }
 
-        .serve-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-ecommerce {
+        /* Added rotation angles for each card */
+        .serve-card.ecommerce {
             background: #5ACAF8;
+            transform: rotate(-8.32deg);
         }
 
-        .card-startups {
+        .serve-card.startups {
             background: #89A6F1;
+            transform: rotate(6.36deg);
         }
 
-        .card-saas {
+        .serve-card.saas {
             background: #B37EFB;
+            transform: rotate(-8.38deg);
         }
 
-        .card-edtech {
+        .serve-card.edtech {
             background: #933BFF;
+            transform: rotate(19.58deg);
+        }
+
+        .serve-card:hover {
+            transform: scale(1.02) rotate(0deg);
         }
 
         .wallet-box {
@@ -797,25 +805,25 @@
             height: auto;
         }
 
-        .serve-title {
+        .serve-card-title {
             font-family: 'Creato Display', sans-serif;
             font-weight: 500;
-            font-size: clamp(48px, 5vw, 76px);
-            line-height: 100px;
-            letter-spacing: -2%;
+            font-size: clamp(36px, 5vw, 56px);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
             color: #070F29;
         }
 
         .badges-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .badge {
             font-family: 'Creato Display', sans-serif;
             font-weight: 500;
-            font-size: 24px;
+            font-size: clamp(16px, 2vw, 20px);
             line-height: 1.5;
             letter-spacing: -0.02em;
             color: #000000;
@@ -828,16 +836,16 @@
             gap: 10px;
         }
 
-        .serve-subtext {
+        .serve-card-desc {
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
-            font-size: clamp(18px, 2vw, 24px);
+            font-size: clamp(16px, 2vw, 20px);
             line-height: 150%;
-            letter-spacing: -2%;
+            letter-spacing: -0.02em;
             color: rgba(7, 15, 41, 0.5);
         }
 
-        .serve-btn {
+        .serve-cta-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
@@ -869,7 +877,7 @@
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
-            padding: 96px 160px;
+            padding: 64px 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -880,275 +888,131 @@
             width: 100%;
             max-width: 1600px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
         }
 
         .testimonial-card {
             width: 100%;
-            min-width: 480px;
-            max-width: 800px;
-            min-height: 560px;
-            padding: 24px;
-            border-radius: 48px;
-            border: 1px solid;
-            border-image-source: linear-gradient(153.03deg, rgba(7, 15, 41, 0.5) 0%, rgba(7, 15, 41, 0) 99.98%);
+            min-height: 300px;
+            padding: 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(7, 15, 41, 0.1);
             background: #F5F5F5;
             display: flex;
             flex-direction: column;
-            gap: 48px;
+            gap: 24px;
             box-sizing: border-box;
-            transition: all 300ms ease-out;
+            transition: all 0.3s ease;
         }
 
         .testimonial-card:hover {
-            background: #FFFFFF;
-            border-image-source: linear-gradient(153.03deg, #532FF7 0%, rgba(7, 15, 41, 0) 99.98%);
-            box-shadow: 0px 4px 12px 4px rgba(84, 44, 246, 0.25);
+            background: linear-gradient(135deg, #255BEC15 0%, #780AFF15 100%);
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #255BEC 0%, #780AFF 100%) 1;
         }
 
-        .testimonial-text-layout {
-            width: 100%;
+        .stars-row {
             display: flex;
-            flex-direction: column;
-            gap: 48px;
-            padding: 24px 0;
-        }
-
-        .stars-layout {
-            width: 139px;
-            height: 24px;
-            display: flex;
-            gap: 4.76px;
+            gap: 8px;
         }
 
         .star {
-            width: 23.97px;
+            width: 24px;
             height: 24px;
-            background: #EBEBEB;
-            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-            transition: all 300ms ease-out;
+            fill: #FFD700;
+            transition: fill 0.3s ease;
         }
 
         .testimonial-card:hover .star {
-            background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+            fill: #255BEC;
         }
 
         .testimonial-text {
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
-            font-size: clamp(18px, 2vw, 24px);
+            font-size: clamp(16px, 2vw, 20px);
             line-height: 150%;
-            letter-spacing: -2%;
-            color: rgba(7, 15, 41, 0.5);
-            transition: all 300ms ease-out;
-        }
-
-        .testimonial-card:hover .testimonial-text {
             color: #070F29;
         }
 
-        .ceo-container {
-            width: 100%;
-            height: 128px;
-            border-radius: 100px;
-            padding: 16px;
-            background: #F5F5F5;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            box-sizing: border-box;
-        }
-
-        .ceo-image {
-            width: 96px;
-            height: 96px;
-            border-radius: 100px;
-            background: #CCCCCC;
-            flex-shrink: 0;
-        }
-
-        .ceo-text-layout {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .ceo-name {
+        .testimonial-author {
             font-family: 'Creato Display', sans-serif;
-            font-weight: 500;
-            font-size: 32px;
-            line-height: 100%;
-            letter-spacing: -2%;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.2;
             color: #070F29;
         }
 
-        .ceo-title {
+        .testimonial-role {
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
-            font-size: 24px;
-            line-height: 100%;
-            color: #7E828F;
+            font-size: 16px;
+            color: rgba(7, 15, 41, 0.6);
         }
 
-        /* Added responsive media queries for all sections */
-        @media (max-width: 1024px) {
-            .services-section,
-            .our-services-grid,
-            .who-we-serve-section,
-            .testimonials-section {
-                padding: 48px 20px;
-                margin-top: 60px;
-            }
-
-            .section-title {
-                font-size: clamp(32px, 5vw, 56px);
-            }
-
-            .grid-container,
-            .cards-section,
-            .testimonials-container {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .services-container {
-                grid-template-columns: 1fr;
-            }
-
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
-
-            .cards-section {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-container {
-                grid-template-columns: 1fr;
-            }
-
-            .services-section,
-            .our-services-grid,
-            .who-we-serve-section,
-            .testimonials-section {
-                padding: 32px 16px;
-                margin-top: 40px;
-            }
-
-            .grid-card,
-            .serve-card,
-            .testimonial-card {
-                padding: 24px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-section,
-            .our-services-grid,
-            .who-we-serve-section,
-            .testimonials-section {
-                padding: 24px 12px;
-                margin-top: 30px;
-            }
-
-            .service-card,
-            .grid-card,
-            .serve-card,
-            .testimonial-card {
-                padding: 20px;
-            }
-        }
-
-        /* CTA Section */
-        .cta-section {
+        /* CTA Consultation Section */
+        .cta-consultation-section {
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
-            padding: 96px 160px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cta-container {
-            width: 100%;
-            max-width: 1600px;
-            min-height: 444px;
-            border-radius: 48px;
-            background: #F5F5F5;
-            padding: 48px;
+            padding: 64px 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 48px;
-            box-sizing: border-box;
+            gap: 32px;
+            background: linear-gradient(135deg, #255BEC10 0%, #780AFF10 100%);
         }
 
         .cta-title {
             font-family: 'Creato Display', sans-serif;
-            font-weight: 800;
-            font-size: clamp(36px, 5vw, 76px);
-            line-height: 100px;
-            letter-spacing: -2%;
+            font-weight: 700;
+            font-size: clamp(28px, 4vw, 48px);
+            line-height: 1.2;
             text-align: center;
             color: #070F29;
+            max-width: 800px;
         }
 
-        .consult-btn {
+        .consultation-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            width: 360px;
-            height: 84px;
-            padding: 16px;
-            box-sizing: border-box;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 32px;
+            border-radius: 100px;
             background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
-            border-radius: 160px;
             text-decoration: none;
-            transition: transform 0.2s ease;
+            transition: transform 0.3s ease;
         }
 
-        .consult-btn:hover {
-            transform: translateY(-2px);
+        .consultation-btn:hover {
+            transform: scale(1.05);
         }
 
-        .arrow-box {
-            width: 52px;
-            height: 52px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-        }
-
-        .text-wrapper {
+        .consultation-text-group {
             display: flex;
             flex-direction: column;
-            gap: 0px;
-            justify-content: center;
+            gap: 4px;
         }
 
-        .sub-text {
+        .consultation-small-text {
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
             font-size: 14px;
-            line-height: 1.2;
-            text-align: left;
             color: #EBEBEB;
         }
 
-        .main-text {
+        .consultation-large-text {
             font-family: 'Creato Display', sans-serif;
             font-weight: 700;
-            font-size: 18px;
-            line-height: 16px;
-            letter-spacing: -0.24px;
-            color: #F5F5F5;
-            padding-bottom: 2px;
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+
+        .consultation-arrow {
+            width: 24px;
+            height: 24px;
         }
 
         /* Footer Styles */
@@ -1156,99 +1020,148 @@
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
-            padding: 96px 160px;
+            padding: 64px 80px 32px;
+            background: #070F29;
             display: flex;
             flex-direction: column;
             gap: 48px;
         }
 
-        .footer-first-layout {
+        .footer-content {
             width: 100%;
-            max-width: 1600px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+        }
+
+        .footer-logo-section {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-logo img {
+            width: 180px;
+            height: auto;
+        }
+
+        .footer-desc {
+            font-family: 'Creato Display', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-column-title {
+            font-family: 'Creato Display', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+
+        .footer-link {
+            font-family: 'Creato Display', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-subscribe {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .subscribe-input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 100px;
+            padding: 8px 12px;
+        }
+
+        .subscribe-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-family: 'Creato Display', sans-serif;
+            font-size: 16px;
+            color: #FFFFFF;
+            padding: 8px;
+        }
+
+        .subscribe-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .subscribe-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .subscribe-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 24px;
+            gap: 16px;
         }
 
-        .footer-text {
-            font-family: 'Creato Display', sans-serif;
-            font-weight: 500;
-            font-size: clamp(18px, 2vw, 24px);
-            line-height: 100%;
-            color: #070F29;
-            max-width: 600px;
-        }
-
-        .email-field {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .input-wrapper {
-            position: relative;
-            width: 360px;
-            height: 48px;
-        }
-
-        .profile-icon {
-            position: absolute;
-            left: 24px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            pointer-events: none;
-        }
-
-        .email-input {
-            width: 100%;
-            height: 100%;
-            border-radius: 100px;
-            border: 1px solid #EBEBEB;
-            padding: 14px 24px 14px 54px;
+        .footer-copyright {
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
             font-size: 14px;
-            line-height: 120%;
-            color: rgba(7, 15, 41, 0.5);
-            box-sizing: border-box;
-            outline: none;
+            color: rgba(255, 255, 255, 0.6);
         }
 
-        .subscribe-btn {
-            width: 146px;
-            height: 48px;
-            border-radius: 100px;
-            background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
-            padding: 8px 16px;
+        .footer-social-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s ease;
+            gap: 16px;
         }
 
-        .subscribe-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .subscribe-text {
-            font-family: 'Creato Display', sans-serif;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 100%;
-            color: #FFFFFF;
-        }
-
-        .send-icon {
+        .social-icon {
             width: 24px;
             height: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #FFFFFF;
         }
 
         /* Added responsive media queries for all new sections */
@@ -1266,11 +1179,30 @@
         }
 
         @media (max-width: 1024px) {
-            .who-we-serve-section,
-            .testimonials-section,
-            .cta-section,
+            .navbar {
+                height: 120px;
+                padding: 30px 30px;
+            }
+
+            .hero-headline {
+                font-size: 48px;
+                line-height: 60px;
+            }
+
+            .section-title {
+                font-size: clamp(28px, 5vw, 42px);
+            }
+
+            .who-we-serve-section {
+                padding: 48px 40px;
+            }
+
+            .testimonials-section {
+                padding: 48px 40px;
+            }
+
             .footer {
-                padding: 60px 40px;
+                padding: 48px 40px 24px;
             }
 
             .cards-section,
@@ -1295,21 +1227,38 @@
         }
 
         @media (max-width: 768px) {
-            .who-we-serve-section,
-            .testimonials-section,
-            .cta-section,
+            .navbar {
+                height: 100px;
+                padding: 20px 20px;
+            }
+
+            .hero-headline {
+                font-size: 36px;
+                line-height: 48px;
+            }
+
+            .section-title {
+                font-size: clamp(24px, 5vw, 36px);
+            }
+
+            .serve-card {
+                transform: rotate(0deg) !important;
+            }
+
+            .serve-card:hover {
+                transform: scale(1.02) rotate(0deg) !important;
+            }
+
+            .who-we-serve-section {
+                padding: 32px 20px;
+            }
+
+            .testimonials-section {
+                padding: 32px 20px;
+            }
+
             .footer {
-                padding: 40px 20px;
-            }
-
-            .serve-title {
-                font-size: 48px;
-                line-height: 60px;
-            }
-
-            .badge {
-                font-size: 18px;
-                padding: 6px 12px;
+                padding: 32px 20px 16px;
             }
 
             .consult-btn {
@@ -1332,9 +1281,13 @@
         }
 
         @media (max-width: 480px) {
-            .serve-title {
-                font-size: 36px;
-                line-height: 48px;
+            .hero-headline {
+                font-size: 28px;
+                line-height: 36px;
+            }
+
+            .serve-card-title {
+                font-size: 32px;
             }
 
             .cta-title {
@@ -1372,30 +1325,27 @@
     </style>
 </head>
 <body>
-    <!-- Updated Navigation Bar structure to match specifications -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- Updated logo to use simple path -->
             <div class="logo">
                 <img src="JJ LOGO 2.png" alt="JustJava Logo">
             </div>
-
-            <!-- Navigation Links -->
+            
             <div class="nav-items-wrapper">
                 <div class="nav-links">
-                    <a href="#" class="nav-item">Services</a>
-                    <a href="#" class="nav-item">DesignOS</a>
-                    <a href="#" class="nav-item">About us</a>
-                    <a href="#" class="nav-item">Insights</a>
+                    <a href="#services" class="nav-item">Services</a>
+                    <a href="#designos" class="nav-item">DesignOS</a>
+                    <a href="#about" class="nav-item">About us</a>
+                    <a href="#insights" class="nav-item">Insights</a>
                 </div>
             </div>
 
-            <!-- CTA Button -->
-            <a href="#" class="book-call-btn">
+            <!-- Updated Book a call button with phone icon -->
+            <a href="#contact" class="book-call-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M13.7489 2.99902C14.0189 2.99902 14.2489 3.19902 14.2989 3.45902C14.3489 3.72902 14.1889 3.98902 13.9289 4.07902C9.50894 5.46902 6.24894 9.43902 6.00894 14.039C5.95894 15.039 6.09894 16.019 6.41894 16.939C6.53894 17.279 6.66894 17.599 6.81894 17.919C6.82894 17.939 6.83894 17.959 6.84894 17.979C7.11894 18.539 7.42894 19.059 7.78894 19.549C7.94894 19.759 7.93894 20.059 7.75894 20.259L5.99894 22.249C5.89894 22.359 5.75894 22.419 5.60894 22.419C5.50894 22.419 5.39894 22.389 5.30894 22.329C4.93894 22.079 4.58894 21.799 4.25894 21.499C1.97894 19.419 0.698938 16.529 0.698938 13.429C0.698938 6.38902 6.37894 0.589023 13.3889 0.0390234C13.5089 0.0290234 13.6289 0.0390234 13.7389 0.0790234C13.7389 0.0890234 13.7489 0.0990234 13.7489 0.109023C13.9089 0.189023 14.0189 0.349023 14.0189 0.529023V2.99902H13.7489Z" fill="white"/>
-                    <path d="M23.2997 13.4297C23.2997 16.5297 22.0197 19.4197 19.7397 21.4997C19.4097 21.7997 19.0597 22.0797 18.6897 22.3297C18.5997 22.3897 18.4897 22.4197 18.3897 22.4197C18.2397 22.4197 18.0997 22.3597 17.9997 22.2497L16.2397 20.2597C16.0597 20.0597 16.0497 19.7597 16.2097 19.5497C16.5697 19.0597 16.8797 18.5397 17.1497 17.9797C17.1597 17.9597 17.1697 17.9397 17.1797 17.9197C17.3297 17.5997 17.4597 17.2797 17.5797 16.9397C17.8997 16.0197 18.0397 15.0397 17.9897 14.0397C17.7497 9.43969 14.4897 5.46969 10.0697 4.07969C9.80973 3.98969 9.64973 3.72969 9.69973 3.45969C9.74973 3.18969 9.97973 2.99969 10.2497 2.99969V0.529688C10.2497 0.349688 10.3597 0.189688 10.5197 0.109688C10.5197 0.0996875 10.5297 0.0896875 10.5297 0.0796875C10.6397 0.0396875 10.7597 0.0296875 10.8797 0.0396875C17.8897 0.589688 23.5697 6.38969 23.5697 13.4297H23.2997Z" fill="white"/>
+                    <path d="M20.2499 14.93V18.23C20.2499 19.46 19.1599 20.4 17.9399 20.23C10.5999 19.21 4.78991 13.4 3.76991 6.06001C3.59991 4.84001 4.53991 3.75001 5.76991 3.75001H9.06991C9.30643 3.74893 9.53568 3.83173 9.71693 3.98369C9.89818 4.13564 10.0197 4.34693 10.0599 4.58001L10.4499 6.77001C10.5899 7.54001 10.2699 8.32001 9.62991 8.77001L7.77991 10.36C9.20991 12.77 11.2399 14.78 13.6599 16.2L15.2299 14.38C15.6799 13.74 16.4599 13.42 17.2299 13.56L19.4199 13.95C19.8999 14.04 20.2499 14.45 20.2499 14.94V14.93Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.1198 10.0299C20.1198 8.40945 19.476 6.85535 18.3302 5.7095C17.1843 4.56365 15.6302 3.91992 14.0098 3.91992M16.6798 10.0299C16.6798 8.54992 15.4798 7.35992 14.0098 7.35992" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span class="btn-text">Book a call</span>
             </a>
@@ -1556,13 +1506,13 @@
         
         <div class="cards-section">
             <!-- E-Commerce Card -->
-            <div class="serve-card card-ecommerce">
+            <div class="serve-card ecommerce">
                 <div class="wallet-box">
-                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="Wallet" class="wallet-gif">
+                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="E-Commerce" class="wallet-gif">
                 </div>
                 
                 <div class="text-container">
-                    <h3 class="serve-title">E-Commerce</h3>
+                    <h3 class="serve-card-title">E-Commerce</h3>
                     
                     <div class="badges-row">
                         <div class="badge">Transaction Safety</div>
@@ -1570,9 +1520,9 @@
                         <div class="badge">Payments</div>
                     </div>
                     
-                    <p class="serve-subtext">Delivering seamless and secure payment processing to boost customer trust and conversion rates</p>
+                    <p class="serve-card-desc">Delivering seamless and secure payment processing to boost customer trust and conversion rates</p>
                     
-                    <a href="#" class="serve-btn">
+                    <a href="#" class="serve-cta-btn">
                         <div class="circle-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
@@ -1584,13 +1534,13 @@
             </div>
 
             <!-- Startups Card -->
-            <div class="serve-card card-startups">
+            <div class="serve-card startups">
                 <div class="wallet-box">
-                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="Wallet" class="wallet-gif">
+                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="Startups" class="wallet-gif">
                 </div>
                 
                 <div class="text-container">
-                    <h3 class="serve-title">Startups</h3>
+                    <h3 class="serve-card-title">Startups</h3>
                     
                     <div class="badges-row">
                         <div class="badge">Auth</div>
@@ -1598,9 +1548,9 @@
                         <div class="badge">Ledgers</div>
                     </div>
                     
-                    <p class="serve-subtext">We build stable, secure systems built for scale and compliance</p>
+                    <p class="serve-card-desc">We build stable, secure systems built for scale and compliance</p>
                     
-                    <a href="#" class="serve-btn">
+                    <a href="#" class="serve-cta-btn">
                         <div class="circle-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
@@ -1612,13 +1562,13 @@
             </div>
 
             <!-- SaaS Founders Card -->
-            <div class="serve-card card-saas">
+            <div class="serve-card saas">
                 <div class="wallet-box">
-                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="Wallet" class="wallet-gif">
+                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="SaaS Founders" class="wallet-gif">
                 </div>
                 
                 <div class="text-container">
-                    <h3 class="serve-title">SaaS Founders</h3>
+                    <h3 class="serve-card-title">SaaS Founders</h3>
                     
                     <div class="badges-row">
                         <div class="badge">Data Security</div>
@@ -1626,9 +1576,9 @@
                         <div class="badge">Patient Records</div>
                     </div>
                     
-                    <p class="serve-subtext">Ensuring the integrity and confidentiality of patient data with cutting-edge encryption methods</p>
+                    <p class="serve-card-desc">Ensuring the integrity and confidentiality of patient data with cutting-edge encryption methods</p>
                     
-                    <a href="#" class="serve-btn">
+                    <a href="#" class="serve-cta-btn">
                         <div class="circle-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
@@ -1640,13 +1590,13 @@
             </div>
 
             <!-- EdTech Card -->
-            <div class="serve-card card-edtech">
+            <div class="serve-card edtech">
                 <div class="wallet-box">
-                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="Wallet" class="wallet-gif">
+                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="EdTech" class="wallet-gif">
                 </div>
                 
                 <div class="text-container">
-                    <h3 class="serve-title">EdTech</h3>
+                    <h3 class="serve-card-title">EdTech</h3>
                     
                     <div class="badges-row">
                         <div class="badge">User Engagement</div>
@@ -1654,9 +1604,9 @@
                         <div class="badge">Learning Analytics</div>
                     </div>
                     
-                    <p class="serve-subtext">Enhancing student outcomes through personalized learning experiences driven by real-time data</p>
+                    <p class="serve-card-desc">Enhancing student outcomes through personalized learning experiences driven by real-time data</p>
                     
-                    <a href="#" class="serve-btn">
+                    <a href="#" class="serve-cta-btn">
                         <div class="circle-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
@@ -1671,120 +1621,126 @@
 
     <!-- Testimonials Section -->
     <section class="testimonials-section">
-        <h2 class="section-title">Testimonials</h2>
+        <h2 class="section-title">What our clients say</h2>
         
         <div class="testimonials-grid">
-            <!-- Testimonial Card 1 -->
             <div class="testimonial-card">
-                <div class="testimonial-text-layout">
-                    <div class="stars-layout">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </div>
-                    
-                    <p class="testimonial-text">We burned months with freelancers who ghosted us halfway through. JustJava came in, rebuilt the backend, and delivered our platform on a real timeline. Their structure and communication were a breath of fresh air—we finally felt like we had a real engineering team</p>
+                <div class="stars-row">
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 </div>
-                
-                <div class="ceo-container">
-                    <div class="ceo-image"></div>
-                    <div class="ceo-text-layout">
-                        <h4 class="ceo-name">Simon Claw</h4>
-                        <p class="ceo-title">CEO, Company</p>
-                    </div>
+                <p class="testimonial-text">"JustJava transformed our vision into a fully functional app in record time. Their expertise in scalable architecture made all the difference."</p>
+                <div>
+                    <p class="testimonial-author">Sarah Johnson</p>
+                    <p class="testimonial-role">CEO, TechStart Inc.</p>
                 </div>
             </div>
 
-            <!-- Testimonial Card 2 -->
             <div class="testimonial-card">
-                <div class="testimonial-text-layout">
-                    <div class="stars-layout">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </div>
-                    
-                    <p class="testimonial-text">We burned months with freelancers who ghosted us halfway through. JustJava came in, rebuilt the backend, and delivered our platform on a real timeline. Their structure and communication were a breath of fresh air—we finally felt like we had a real engineering team</p>
+                <div class="stars-row">
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 </div>
-                
-                <div class="ceo-container">
-                    <div class="ceo-image"></div>
-                    <div class="ceo-text-layout">
-                        <h4 class="ceo-name">Simon Claw</h4>
-                        <p class="ceo-title">CEO, Company</p>
-                    </div>
+                <p class="testimonial-text">"Working with JustJava was a game-changer. They understood our needs and delivered beyond expectations with incredible attention to detail."</p>
+                <div>
+                    <p class="testimonial-author">Michael Chen</p>
+                    <p class="testimonial-role">Founder, EdTech Solutions</p>
                 </div>
             </div>
 
-            <!-- Testimonial Card 3 -->
             <div class="testimonial-card">
-                <div class="testimonial-text-layout">
-                    <div class="stars-layout">
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                        <div class="star"></div>
-                    </div>
-                    
-                    <p class="testimonial-text">We burned months with freelancers who ghosted us halfway through. JustJava came in, rebuilt the backend, and delivered our platform on a real timeline. Their structure and communication were a breath of fresh air—we finally felt like we had a real engineering team</p>
+                <div class="stars-row">
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg class="star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                 </div>
-                
-                <div class="ceo-container">
-                    <div class="ceo-image"></div>
-                    <div class="ceo-text-layout">
-                        <h4 class="ceo-name">Simon Claw</h4>
-                        <p class="ceo-title">CEO, Company</p>
-                    </div>
+                <p class="testimonial-text">"The team at JustJava brought our e-commerce platform to life with secure payment processing and an intuitive user experience. Highly recommended!"</p>
+                <div>
+                    <p class="testimonial-author">Emily Rodriguez</p>
+                    <p class="testimonial-role">CTO, ShopFlow</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-container">
-            <h2 class="cta-title">Ready to take your software to the next level?</h2>
-            
-            <a href="#" class="consult-btn">
-                <div class="arrow-box">
-                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22.2883 10.154L12.3888 10.154C11.8519 10.1552 11.3566 10.4428 11.0893 10.9083C10.8219 11.3739 10.8233 11.9467 11.0928 12.4109C11.3623 12.8752 11.859 13.1604 12.3958 13.1592L18.6537 13.1521L10.5857 21.2202C9.99987 21.806 9.99987 22.7557 10.5857 23.3415C11.1714 23.9273 12.1212 23.9273 12.707 23.3415L20.7751 15.2734L20.768 21.5313C20.7684 22.1376 21.1337 22.684 21.6938 22.9161C22.2539 23.1482 22.8986 23.0203 23.3277 22.592C23.6081 22.3031 23.7588 21.9125 23.7449 21.5101L23.7449 11.6106C23.7444 10.7829 23.0735 10.1121 22.2458 10.1115L22.2883 10.154Z" fill="white"/>
-                    </svg>
-                </div>
-                
-                <div class="text-wrapper">
-                    <span class="sub-text">Ready for a real scale up</span>
-                    <span class="main-text">Book a free consultation call</span>
-                </div>
-            </a>
-        </div>
+    <!-- CTA Consultation Section -->
+    <section class="cta-consultation-section">
+        <h2 class="cta-title">Ready to take your software to the next level?</h2>
+        <a href="#" class="consultation-btn">
+            <div class="consultation-text-group">
+                <span class="consultation-small-text">Let's talk about</span>
+                <span class="consultation-large-text">Free Consultation</span>
+            </div>
+            <svg class="consultation-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-first-layout">
-            <p class="footer-text">Stay in the loop. Get product updates, insights, and stories—straight to your inbox</p>
-            
-            <div class="email-field">
-                <div class="input-wrapper">
-                    <svg class="profile-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.0007 9.99935C12.3018 9.99935 14.1673 8.13387 14.1673 5.83268C14.1673 3.5315 12.3018 1.66602 10.0007 1.66602C7.69946 1.66602 5.83398 3.5315 5.83398 5.83268C5.83398 8.13387 7.69946 9.99935 10.0007 9.99935Z" stroke="#070F29" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M17.1585 18.3333C17.1585 15.1083 13.9501 12.5 10.0001 12.5C6.05013 12.5 2.8418 15.1083 2.8418 18.3333" stroke="#070F29" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <input type="email" class="email-input" placeholder="Enter your email">
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <div class="footer-logo">
+                    <img src="JJ LOGO 2.png" alt="JustJava Logo">
                 </div>
-                
-                <button class="subscribe-btn">
-                    <span class="subscribe-text">Subscribe</span>
-                    <svg class="send-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.7896 0.0744176C18.8056 -0.280582 19.7816 0.695418 19.4266 1.71142L13.5016 18.6414C13.1166 19.7394 11.5866 19.8014 11.1146 18.7384L8.25561 12.3064L12.2796 8.28142C12.4121 8.13924 12.4842 7.9512 12.4808 7.7569C12.4774 7.56259 12.3986 7.37721 12.2612 7.2398C12.1238 7.10238 11.9384 7.02367 11.7441 7.02024C11.5498 7.01681 11.3618 7.08894 11.2196 7.22142L7.19461 11.2454L0.762611 8.38642C-0.300389 7.91342 -0.23739 6.38442 0.85961 5.99942L17.7896 0.0744176Z" fill="#F5F5F5"/>
+                <p class="footer-desc">We help start-ups and scale-ups build, launch, and maintain reliable software with dedicated engineering pods.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-column-title">Services</h4>
+                <a href="#" class="footer-link">Web Development</a>
+                <a href="#" class="footer-link">Mobile Apps</a>
+                <a href="#" class="footer-link">CoreCare™</a>
+                <a href="#" class="footer-link">DeliveryOS</a>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-column-title">Company</h4>
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Careers</a>
+                <a href="#" class="footer-link">Insights</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+
+            <div class="footer-subscribe">
+                <h4 class="footer-column-title">Stay Updated</h4>
+                <div class="subscribe-input-wrapper">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 10C12.7614 10 15 7.76142 15 5C15 2.23858 12.7614 0 10 0C7.23858 0 5 2.23858 5 5C5 7.76142 7.23858 10 10 10ZM10 12.5C6.66667 12.5 0 14.175 0 17.5V20H20V17.5C20 14.175 13.3333 12.5 10 12.5Z" fill="rgba(255,255,255,0.7)"/>
                     </svg>
-                </button>
+                    <input type="email" placeholder="Enter your email" class="subscribe-input">
+                    <button class="subscribe-btn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 1L9 11M19 1L13 19L9 11M19 1L1 7L9 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2026 JustJava. All rights reserved.</p>
+            <div class="footer-social-links">
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+                <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
             </div>
         </div>
     </footer>
