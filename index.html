@@ -15,72 +15,88 @@
 
         body {
             font-family: 'Creato Display', sans-serif;
-            background: #EFF3F9;
+            background: #F8F9FB;
             overflow-x: hidden;
-            width: 1920px;
-            margin: 0 auto;
+            color: #070F29;
         }
 
-        /* Navigation Bar */
-        nav {
-            width: 1920px;
-            height: 145px;
+        /* Updated Fixed Navbar to match specifications with responsive design */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 177px;
+            padding: 54px 60px;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 38px 100px;
-            position: relative;
-            z-index: 100;
+            z-index: 1000;
+            background: #EEF2F7;
+            box-sizing: border-box;
         }
 
         .nav-container {
             width: 1720px;
+            max-width: 100%;
             height: 69px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo img {
+        .logo {
             width: 200px;
             height: 48px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .nav-items-wrapper {
             width: 531px;
             height: 69px;
-            gap: 24px;
-            border-radius: 100px;
-            border: 1px solid #00000014;
-            padding: 8px 10px;
             background: #EBEBEB;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            padding: 8px 10px;
+            box-sizing: border-box;
+            gap: 24px;
         }
 
         .nav-links {
             display: flex;
-            gap: 0;
             align-items: center;
-            height: 100%;
+            gap: 24px;
+            width: 100%;
+            justify-content: center;
         }
 
         .nav-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-radius: 50px;
-            padding: 16px;
             font-family: 'Creato Display', sans-serif;
             font-weight: 500;
             font-size: 18px;
-            line-height: 100%;
-            letter-spacing: 0%;
-            color: #070F29;
             text-decoration: none;
-            transition: background 0.3s;
+            color: #070F29;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 53px;
+            border-radius: 50px;
+            gap: 8px;
+            transition: opacity 0.3s;
         }
 
         .nav-item:hover {
-            background: #EEF2F7;
+            opacity: 0.7;
         }
 
         .book-call-btn {
@@ -91,11 +107,15 @@
             width: 153px;
             height: 48px;
             padding: 8px 16px;
+            box-sizing: border-box;
             border-radius: 100px;
             background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
             text-decoration: none;
-            border: none;
-            cursor: pointer;
+        }
+
+        .book-call-btn svg {
+            width: 24px;
+            height: 24px;
         }
 
         .btn-text {
@@ -106,13 +126,16 @@
             color: #FFFFFF;
         }
 
-        /* Hero Section */
+        /* Updated Hero Section with responsive design */
         .hero {
-            width: 1920px;
-            height: 1080px;
             position: relative;
-            background: #EFF3F9;
+            width: 100%;
+            min-height: 100vh;
+            padding-top: 177px;
+            display: flex;
+            justify-content: center;
             overflow: hidden;
+            background: #F8F9FB;
         }
 
         .hero-bg-vector {
@@ -121,27 +144,35 @@
             left: -356px;
             width: 2400px;
             height: 882px;
-            z-index: 1;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .hero-bg-vector svg {
+            width: 100%;
+            height: 100%;
         }
 
         .hero-container {
-            width: 1710px;
-            height: 644px;
-            gap: 100px;
-            position: absolute;
-            top: 283px;
-            left: 105px;
+            width: 1720px;
+            max-width: 95%;
+            height: auto;
             display: flex;
-            z-index: 2;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 48px;
+            margin-top: 50px;
+            padding: 0 20px;
         }
 
         .hero-text-content {
             width: 806px;
-            height: 644px;
-            gap: 48px;
+            max-width: 100%;
+            position: relative;
             display: flex;
             flex-direction: column;
-            position: relative;
+            gap: 48px;
+            padding-top: 50px;
         }
 
         .hero-headline {
@@ -149,52 +180,59 @@
             font-weight: 800;
             font-size: 80px;
             line-height: 100px;
-            letter-spacing: 0%;
             color: #070F29;
-        }
-
-        .dynamic-text {
-            color: #070F2980;
-            transition: opacity 0.3s ease;
+            text-align: left;
         }
 
         .inline-group {
             display: inline-flex;
             align-items: center;
-            gap: 16px;
+            gap: 20px;
+            vertical-align: middle;
         }
 
         .dynamic-gif {
-            width: 96px;
-            height: 96px;
-            object-fit: contain;
+            width: 120px;
+            height: 80px;
+            border-radius: 50px;
+            object-fit: cover;
         }
 
-        .action-text {
-            color: #070F29;
+        .dynamic-text {
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.98, 0.02, 0, 1);
         }
 
         .opacity-text {
-            color: #070F2980;
+            color: rgba(7, 15, 41, 0.5);
+        }
+
+        #slot-3:hover {
+            background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
         }
 
         .hero-subtext {
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
-            font-size: 24px;
-            line-height: 100%;
-            letter-spacing: 0%;
+            font-size: 16px;
+            line-height: 140%;
             color: #7E828F;
+            max-width: 500px;
         }
 
         .cta-backdrop {
+            position: absolute;
             width: 321px;
             height: 362px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            top: 400px;
+            left: -50px;
             background: linear-gradient(241.2deg, #F5F5F5 40.12%, rgba(245, 245, 245, 0) 99.38%);
             z-index: -1;
+            border-radius: 50%;
+            filter: blur(40px);
         }
 
         .hero-cta-btn-large {
@@ -202,17 +240,20 @@
             height: 84px;
             gap: 8px;
             border-radius: 160px;
-            padding: 16px;
             background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
-            text-decoration: none;
+            padding: 16px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            transition: transform 0.3s;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0px 10px 30px rgba(37, 91, 236, 0.3);
+            margin-top: 24px;
+            transition: transform 0.2s;
+            box-sizing: border-box;
         }
 
         .hero-cta-btn-large:hover {
-            transform: translateY(-2px);
+            transform: scale(1.02);
         }
 
         .cta-text-group {
@@ -240,65 +281,211 @@
         }
 
         .cta-arrow-large {
-            width: 40px;
-            height: 40px;
+            width: 24px;
+            height: 24px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
         }
 
         .hero-visual-content {
+            position: relative;
             width: 800px;
             height: 600px;
-            position: relative;
         }
 
         .visual-bg-blob {
+            position: absolute;
             width: 177px;
             height: 263px;
-            position: absolute;
-            top: -15px;
-            right: -80px;
+            top: 50px;
+            right: -20px;
             background: linear-gradient(319.76deg, rgba(245, 245, 245, 0) 34.06%, #F5F5F5 62.15%);
-            z-index: 1;
+            z-index: -1;
+            border-radius: 30px;
         }
 
         .hero-image-wrapper {
-            width: 800px;
-            height: 600px;
+            position: relative;
+            width: 100%;
+            height: 100%;
             border-radius: 36px;
             background: #255BEC;
-            position: relative;
             overflow: hidden;
-            z-index: 2;
         }
 
         .hero-main-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            mix-blend-mode: normal;
         }
 
         .video-play-btn {
-            width: 96px;
-            height: 96px;
-            border-radius: 45px;
-            background: #FFFFFF;
-            box-shadow: 0px 8px 16px 0px #00000040;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            width: 96px;
+            height: 96px;
+            background: #FFFFFF;
+            border-radius: 45px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: transform 0.3s;
-            z-index: 3;
         }
 
         .video-play-btn:hover {
             transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-play-btn svg {
+            margin-left: 4px;
+        }
+
+        /* Added responsive media queries */
+        @media (max-width: 1440px) {
+            .navbar {
+                height: 140px;
+                padding: 40px 40px;
+            }
+
+            .nav-container {
+                width: 100%;
+            }
+
+            .hero-container {
+                width: 100%;
+                gap: 32px;
+            }
+
+            .hero-headline {
+                font-size: 64px;
+                line-height: 80px;
+            }
+
+            .dynamic-gif {
+                width: 96px;
+                height: 64px;
+            }
+
+            .hero-visual-content {
+                width: 600px;
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .navbar {
+                height: 120px;
+                padding: 30px 30px;
+            }
+
+            .nav-items-wrapper {
+                width: auto;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 48px;
+            }
+
+            .hero-text-content {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+                padding-top: 20px;
+            }
+
+            .hero-headline {
+                font-size: 56px;
+                line-height: 70px;
+                text-align: center;
+            }
+
+            .hero-subtext {
+                text-align: center;
+                max-width: 600px;
+            }
+
+            .hero-visual-content {
+                width: 100%;
+                max-width: 600px;
+                height: 450px;
+            }
+
+            .hero-cta-btn-large {
+                margin: 24px auto 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                height: 100px;
+                padding: 20px 20px;
+            }
+
+            .logo {
+                width: 150px;
+                height: 36px;
+            }
+
+            .nav-items-wrapper {
+                display: none;
+            }
+
+            .book-call-btn {
+                width: 130px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .hero-headline {
+                font-size: 40px;
+                line-height: 50px;
+            }
+
+            .dynamic-gif {
+                width: 60px;
+                height: 40px;
+            }
+
+            .hero-subtext {
+                font-size: 14px;
+            }
+
+            .hero-cta-btn-large {
+                width: 300px;
+                height: 70px;
+            }
+
+            .hero-visual-content {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 15px 15px;
+            }
+
+            .hero-headline {
+                font-size: 32px;
+                line-height: 40px;
+            }
+
+            .hero-cta-btn-large {
+                width: 280px;
+                height: 65px;
+            }
+
+            .cta-large-text {
+                font-size: 16px;
+            }
         }
 
         /* Services Section - CoreCare & DeliveryOS */
@@ -991,8 +1178,8 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
+    <!-- Updated Navigation Bar structure to match specifications -->
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
                 <img src="/images/jj-20logo-202.png" alt="JustJava Logo">
@@ -1003,7 +1190,7 @@
                     <a href="#" class="nav-item">
                         <span>Services</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.99957 11.1667C7.86686 11.1673 7.7395 11.1144 7.64624 11.02L2.31291 5.68666C2.12933 5.48966 2.13475 5.18266 2.32516 4.99225C2.51557 4.80184 2.82257 4.79642 3.01957 4.98L7.99957 9.96L12.9796 4.98C13.1766 4.79642 13.4836 4.80184 13.674 4.99225C13.8644 5.18266 13.8698 5.48966 13.6862 5.68666L8.35291 11.02C8.25965 11.1144 8.13228 11.1673 7.99957 11.1667Z" fill="#070F29" fill-opacity="0.5"/>
+                            <path d="M7.99957 11.1667C7.86686 11.1673 7.7395 11.1144 7.64624 11.02L2.31291 5.68666C2.12933 5.48966 2.13475 5.18266 2.32516 4.99225C2.51557 4.80184 2.82257 4.79642 3.01957 4.98L7.99957 9.96L12.9796 4.98C13.1766 4.79642 13.4836 4.80184 13.674 4.99225C13.8644 5.18266 13.8698 5.48966 13.6862 5.68666L8.35291 11.02C8.25965 11.1144 8.13228 11.1673 7.99957 11.1667Z" fill="#070F29" fill-opacity="0.5" />
                         </svg>
                     </a>
                     <a href="#" class="nav-item">DesignOS</a>
@@ -1014,31 +1201,23 @@
 
             <a href="#" class="book-call-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20.2499 14.93V18.23C20.2499 19.46 19.1599 20.4 17.9399 20.23C10.5999 19.21 4.78991 13.4 3.76991 6.06001C3.59991 4.84001 4.53991 3.75001 5.76991 3.75001H9.06991C9.30643 3.74893 9.53568 3.83173 9.71693 3.98369C9.89818 4.13564 10.0197 4.34693 10.0599 4.58001L10.4499 6.77001C10.5899 7.54001 10.2699 8.32001 9.62991 8.77001L7.77991 10.36C9.20991 12.77 11.2399 14.78 13.6599 16.2L15.2299 14.38C15.6799 13.74 16.4599 13.42 17.2299 13.56L19.4199 13.95C19.8999 14.04 20.2499 14.45 20.2499 14.94V14.93Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20.1198 10.0299C20.1198 8.40945 19.476 6.85535 18.3302 5.7095C17.1843 4.56365 15.6302 3.91992 14.0098 3.91992M16.6798 10.0299C16.6798 8.54992 15.4798 7.35992 14.0098 7.35992" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.2499 14.93V18.23C20.2499 19.46 19.1599 20.4 17.9399 20.23C10.5999 19.21 4.78991 13.4 3.76991 6.06001C3.59991 4.84001 4.53991 3.75001 5.76991 3.75001H9.06991C9.30643 3.74893 9.53568 3.83173 9.71693 3.98369C9.89818 4.13564 10.0197 4.34693 10.0599 4.58001L10.4499 6.77001C10.5899 7.54001 10.2699 8.32001 9.62991 8.77001L7.77991 10.36C9.20991 12.77 11.2399 14.78 13.6599 16.2L15.2299 14.38C15.6799 13.74 16.4599 13.42 17.2299 13.56L19.4199 13.95C19.8999 14.04 20.2499 14.45 20.2499 14.94V14.93Z" fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M20.1198 10.0299C20.1198 8.40945 19.476 6.85535 18.3302 5.7095C17.1843 4.56365 15.6302 3.91992 14.0098 3.91992M16.6798 10.0299C16.6798 8.54992 15.4798 7.35992 14.0098 7.35992" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <span class="btn-text">Book a call</span>
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Updated Hero Section with proper structure -->
     <header class="hero">
         <div class="hero-bg-vector">
             <svg width="1920" height="883" viewBox="0 0 1920 883" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2022.61 161.41C1937.76 331.654 1552.69 504.349 1275.92 609.649C1111.07 672.851 984.719 711.954 984.719 711.954C969.688 716.147 954.63 720.967 939.599 725.787C797.592 768.511 653.789 807.015 508.188 834.681C443.216 847.316 377.618 856.928 311.448 864.144C176.685 878.604 43.6922 888.815 -92.2691 877.405C-160.862 871.959 -329.936 872.586 -354.007 786.538C-381.074 689.679 -124.755 538.06 -47.7474 492.912C97.2543 406.864 229.022 365.964 323.484 338.298C177.284 408.063 73.7817 485.097 5.78745 542.853C-83.2559 619.261 -86.2784 641.536 -82.0577 654.171C-53.7654 747.408 280.161 690.278 346.93 681.837C401.69 675.819 456.423 667.377 510.584 657.166C655.586 630.698 798.192 592.794 939.572 553.064C946.189 551.267 952.805 549.443 959.422 547.646C959.422 547.646 1102.63 506.718 1275.89 442.346C1479.25 367.135 1722.93 260.011 1827.04 146.923C1848.68 124.077 1906.47 61.5016 1887.22 26.5923C1878.2 9.13762 1852.31 4.94414 1836.68 3.1197C1856.53 0.723428 1999.73 -14.335 2035.84 52.4884C2056.89 92.1903 2031.62 142.73 2022.61 161.383V161.41Z" fill="url(#paint0_linear)"/>
+                <path d="M2022.61 161.41C1937.76 331.654 1552.69 504.349 1275.92 609.649C1111.07 672.851 984.719 711.954 984.719 711.954C969.688 716.147 954.63 720.967 939.599 725.787C797.592 768.511 653.789 807.015 508.188 834.681C443.216 847.316 377.618 856.928 311.448 864.144C176.685 878.604 43.6922 888.815 -92.2691 877.405C-160.862 871.959 -329.936 872.586 -354.007 786.538C-381.074 689.679 -124.755 538.06 -47.7474 492.912C97.2543 406.864 229.022 365.964 323.484 338.298C177.284 408.063 73.7817 485.097 5.78745 542.853C-83.2559 619.261 -86.2784 641.536 -82.0577 654.171C-53.7654 747.408 280.161 690.278 346.93 681.837C401.69 675.819 456.423 667.377 510.584 657.166C655.586 630.698 798.192 592.794 939.572 553.064C946.189 551.267 952.805 549.443 959.422 547.646C959.422 547.646 1102.63 506.718 1275.89 442.346C1479.25 367.135 1722.93 260.011 1827.04 146.923C1848.68 124.077 1906.47 61.5016 1887.22 26.5923C1878.2 9.13762 1852.31 4.94414 1836.68 3.1197C1856.53 0.723428 1999.73 -14.335 2035.84 52.4884C2056.89 92.1903 2031.62 142.73 2022.61 161.383V161.41Z" fill="url(#paint0_linear)" />
                 <defs>
-                    <linearGradient id="paint0_linear" x1="-614.738" y1="954.358" x2="2407" y2="-129" gradientUnits="userSpaceOnUse">
-                        <stop offset="0.03" stop-color="#00B3FF" stop-opacity="0"/>
-                        <stop offset="0.07" stop-color="#07ADFF"/>
-                        <stop offset="0.11" stop-color="#0DA7FF"/>
-                        <stop offset="0.24" stop-color="#2F89FF"/>
-                        <stop offset="0.42" stop-color="#6659FF"/>
-                        <stop offset="0.52" stop-color="#893BFF"/>
-                        <stop offset="0.65" stop-color="#8531FF"/>
-                        <stop offset="0.88" stop-color="#7D19FF"/>
-                        <stop offset="0.94" stop-color="#7B12FF"/>
-                        <stop offset="1" stop-color="#780AFF" stop-opacity="0"/>
+                    <linearGradient id="paint0_linear" x1="-354.007" y1="441.5" x2="2035.84" y2="441.5" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#EFF3F9" />
+                        <stop offset="1" stop-color="#EFF3F9" stop-opacity="0" />
                     </linearGradient>
                 </defs>
             </svg>
@@ -1069,7 +1248,7 @@
                     </div>
                     <div class="cta-arrow-large">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(45deg);">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
                 </a>
@@ -1083,7 +1262,7 @@
 
                     <div class="video-play-btn">
                         <svg width="31" height="35" viewBox="0 0 31 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.75 31.9106V2.75056C0.749907 2.40139 0.837572 2.05828 1.00428 1.75535C1.17098 1.45242 1.41092 1.20024 1.70022 1.02387C1.98952 0.847509 2.3181 0.753114 2.65329 0.750076C2.98848 0.747038 3.3186 0.835463 3.6108 1.00656L28.494 15.5866C28.7913 15.7604 29.0388 16.0136 29.2111 16.3201C29.3834 16.6266 29.4741 16.9754 29.4741 17.3306C29.4741 17.6857 29.3834 18.0345 29.2111 18.341C29.0388 18.6475 28.7913 18.9007 28.494 19.0746L3.6108 33.6546C3.3186 33.8256 2.98848 33.9141 2.65329 33.911C2.3181 33.908 1.98952 33.8136 1.70022 33.6372C1.41092 33.4609 1.17098 33.2087 1.00428 32.9058C0.837572 32.6028 0.749907 32.2597 0.75 31.9106Z" fill="#070F29" stroke="#070F29" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M0.75 31.9106V2.75056C0.749907 2.40139 0.837572 2.05828 1.00428 1.75535C1.17098 1.45242 1.41092 1.20024 1.70022 1.02387C1.98952 0.847509 2.3181 0.753114 2.65329 0.750076C2.98848 0.747038 3.3186 0.835463 3.6108 1.00656L28.494 15.5866C28.7913 15.7604 29.0388 16.0136 29.2111 16.3201C29.3834 16.6266 29.4741 16.9754 29.4741 17.3306C29.4741 17.6857 29.3834 18.0345 29.2111 18.341C29.0388 18.6475 28.7913 18.9007 28.494 19.0746L3.6108 33.6546C3.3186 33.8256 2.98848 33.9141 2.65329 33.911C2.3181 33.908 1.98952 33.8136 1.70022 33.6372C1.41092 33.4609 1.17098 33.2087 1.00428 32.9058C0.837572 32.6028 0.749907 32.2597 0.75 31.9106Z" fill="#070F29" stroke="#070F29" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </div>
                 </div>
@@ -1221,7 +1400,7 @@
             <!-- SaaS Founders Card -->
             <div class="serve-card card-saas">
                 <div class="wallet-box">
-                    <img src="/images/1ba5cc6aa13a9cf9fa0a7c7901c827bcd4c88f50.gif" alt="SaaS" class="wallet-gif">
+                    <img src="/images/0515c18c2deb122f56f5dd59b13fc85053c218d9.gif" alt="SaaS" class="wallet-gif">
                 </div>
                 <div class="text-container">
                     <h3 class="card-main-title">SaaS Founders</h3>
@@ -1245,7 +1424,7 @@
             <!-- EdTech Card -->
             <div class="serve-card card-edtech">
                 <div class="wallet-box">
-                    <img src="/images/0515c18c2deb122f56f5dd59b13fc85053c218d9.gif" alt="EdTech" class="wallet-gif">
+                    <img src="/images/jj-20logo-202.png" alt="EdTech" class="wallet-gif">
                 </div>
                 <div class="text-container">
                     <h3 class="card-main-title">EdTech</h3>
@@ -1408,10 +1587,11 @@
     </footer>
 
     <script>
-        // Animation data
-        const slot1Words = ['Start-Ups', 'Fintechs', 'CTO\'s'];
-        let slot1Index = 0;
-
+        // Slot 1: CTO's/Start-Ups/Fintechs (2400ms delay)
+        const slot1Words = ['CTO\'s', 'Start-Ups', 'Fintechs'];
+        let slot1Index = 1;
+        
+        // Slot 2: Build/Scale/Optimize/Launch with GIFs (2800ms delay)
         const slot2Data = [
             { text: 'Build', gif: '/images/e5a2be47d967bbb5c7c3bdaa2786f74e154ade0b-20-282-29.gif' },
             { text: 'Scale', gif: '/images/1ba5cc6aa13a9cf9fa0a7c7901c827bcd4c88f50.gif' },
@@ -1419,52 +1599,30 @@
             { text: 'Launch', gif: '/images/0515c18c2deb122f56f5dd59b13fc85053c218d9.gif' }
         ];
         let slot2Index = 0;
-
+        
+        // Slot 3: MVPs/Software/Apps/Workflows (1800ms delay)
         const slot3Words = ['MVPs', 'Software', 'Apps', 'Workflows'];
         let slot3Index = 0;
-
-        const slot1Element = document.getElementById('slot-1');
-        const slot2Element = document.getElementById('slot-2');
-        const slotGifElement = document.getElementById('slot-gif');
-        const slot3Element = document.getElementById('slot-3');
-
-        // Slot 1 animation (2400ms)
-        function animateSlot1() {
-            slot1Element.classList.remove('fade-in');
-            setTimeout(() => {
-                slot1Index = (slot1Index + 1) % slot1Words.length;
-                slot1Element.textContent = slot1Words[slot1Index];
-                slot1Element.classList.add('fade-in');
-            }, 50);
+        
+        function cycleSlot1() {
+            slot1Index = (slot1Index + 1) % slot1Words.length;
+            document.getElementById('slot-1').textContent = slot1Words[slot1Index];
         }
-
-        // Slot 2 animation with GIF (2800ms)
-        function animateSlot2() {
-            slot2Element.classList.remove('fade-in');
-            slotGifElement.classList.remove('fade-in');
-            setTimeout(() => {
-                slot2Index = (slot2Index + 1) % slot2Data.length;
-                slot2Element.textContent = slot2Data[slot2Index].text;
-                slotGifElement.src = slot2Data[slot2Index].gif;
-                slot2Element.classList.add('fade-in');
-                slotGifElement.classList.add('fade-in');
-            }, 50);
+        
+        function cycleSlot2() {
+            slot2Index = (slot2Index + 1) % slot2Data.length;
+            document.getElementById('slot-2').textContent = slot2Data[slot2Index].text;
+            document.getElementById('slot-gif').src = slot2Data[slot2Index].gif;
         }
-
-        // Slot 3 animation (1800ms)
-        function animateSlot3() {
-            slot3Element.classList.remove('fade-in');
-            setTimeout(() => {
-                slot3Index = (slot3Index + 1) % slot3Words.length;
-                slot3Element.textContent = slot3Words[slot3Index];
-                slot3Element.classList.add('fade-in');
-            }, 50);
+        
+        function cycleSlot3() {
+            slot3Index = (slot3Index + 1) % slot3Words.length;
+            document.getElementById('slot-3').textContent = slot3Words[slot3Index];
         }
-
-        // Start animations
-        setInterval(animateSlot1, 2400);
-        setInterval(animateSlot2, 2800);
-        setInterval(animateSlot3, 1800);
+        
+        setInterval(cycleSlot1, 2400);
+        setInterval(cycleSlot2, 2800);
+        setInterval(cycleSlot3, 1800);
     </script>
 </body>
 </html>
