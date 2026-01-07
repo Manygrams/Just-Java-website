@@ -79,6 +79,7 @@
             justify-content: center;
         }
 
+        /* Updated nav-item hover animation with background and gradient text */
         .nav-item {
             font-family: 'Creato Display', sans-serif;
             font-weight: 500;
@@ -92,11 +93,16 @@
             height: 53px;
             border-radius: 50px;
             gap: 8px;
-            transition: opacity 0.3s;
+            transition: all 300ms ease-out;
+            position: relative;
         }
 
         .nav-item:hover {
-            opacity: 0.7;
+            background: #F5F5F5;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
         }
 
         .book-call-btn {
@@ -715,33 +721,34 @@
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
-            padding: 64px 20px;
-            margin-top: 80px;
+            padding: 96px 160px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px;
+            gap: 48px;
         }
 
         .cards-section {
             width: 100%;
             max-width: 1600px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 0;
         }
 
         .serve-card {
             width: 100%;
-            min-height: 350px;
+            min-height: 480px;
+            max-width: 800px;
             padding: 24px;
-            border-radius: 24px;
-            border: 1px solid rgba(7, 15, 41, 0.2);
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 48px;
+            border: 1px solid;
+            border-image-source: linear-gradient(153.03deg, rgba(7, 15, 41, 0.5) 0%, rgba(7, 15, 41, 0) 99.98%);
+            box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
             box-sizing: border-box;
             transition: transform 0.3s ease;
         }
@@ -763,7 +770,7 @@
         }
 
         .card-edtech {
-            background: linear-gradient(180deg, #F7CE61 0%, #FFB74D 100%);
+            background: #933BFF;
         }
 
         .wallet-box {
@@ -790,28 +797,28 @@
             height: auto;
         }
 
-        .card-main-title {
+        .serve-title {
             font-family: 'Creato Display', sans-serif;
             font-weight: 500;
-            font-size: clamp(36px, 5vw, 76px);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
+            font-size: clamp(48px, 5vw, 76px);
+            line-height: 100px;
+            letter-spacing: -2%;
             color: #070F29;
         }
 
         .badges-row {
             display: flex;
-            gap: 10px;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
         .badge {
             font-family: 'Creato Display', sans-serif;
             font-weight: 500;
-            font-size: clamp(14px, 2vw, 20px);
+            font-size: 24px;
             line-height: 1.5;
             letter-spacing: -0.02em;
-            color: #070F29;
+            color: #000000;
             background-color: #FFFFFF;
             border-radius: 8px;
             display: inline-flex;
@@ -821,16 +828,16 @@
             gap: 10px;
         }
 
-        .card-subtext {
+        .serve-subtext {
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
-            font-size: clamp(14px, 2vw, 20px);
+            font-size: clamp(18px, 2vw, 24px);
             line-height: 150%;
-            letter-spacing: -0.02em;
-            color: rgba(7, 15, 41, 0.6);
+            letter-spacing: -2%;
+            color: rgba(7, 15, 41, 0.5);
         }
 
-        .action-btn {
+        .serve-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
@@ -846,10 +853,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-shrink: 0;
         }
 
-        .action-btn-text {
+        .serve-btn-text {
             font-family: 'Creato Display', sans-serif;
             font-weight: 500;
             font-size: 18px;
@@ -863,84 +869,126 @@
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
-            padding: 64px 20px;
-            margin-top: 80px;
+            padding: 96px 160px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px;
+            gap: 48px;
         }
 
-        .testimonials-container {
+        .testimonials-grid {
             width: 100%;
             max-width: 1600px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
         }
 
         .testimonial-card {
             width: 100%;
-            min-height: 300px;
-            padding: 32px;
-            border-radius: 24px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            background: #FFFFFF;
+            min-width: 480px;
+            max-width: 800px;
+            min-height: 560px;
+            padding: 24px;
+            border-radius: 48px;
+            border: 1px solid;
+            border-image-source: linear-gradient(153.03deg, rgba(7, 15, 41, 0.5) 0%, rgba(7, 15, 41, 0) 99.98%);
+            background: #F5F5F5;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            transition: all 0.3s ease;
+            gap: 48px;
             box-sizing: border-box;
+            transition: all 300ms ease-out;
         }
 
         .testimonial-card:hover {
-            background: linear-gradient(135deg, #5ACAF8 0%, #89A6F1 50%, #B37EFB 100%);
-            border: 1px solid transparent;
-            box-shadow: 0 8px 24px rgba(37, 91, 236, 0.2);
+            background: #FFFFFF;
+            border-image-source: linear-gradient(153.03deg, #532FF7 0%, rgba(7, 15, 41, 0) 99.98%);
+            box-shadow: 0px 4px 12px 4px rgba(84, 44, 246, 0.25);
         }
 
-        .testimonial-card:hover .testimonial-text,
-        .testimonial-card:hover .testimonial-author,
-        .testimonial-card:hover .testimonial-role {
-            color: #FFFFFF;
-        }
-
-        .testimonial-stars {
+        .testimonial-text-layout {
+            width: 100%;
             display: flex;
-            gap: 4px;
+            flex-direction: column;
+            gap: 48px;
+            padding: 24px 0;
         }
 
-        .testimonial-stars svg {
-            width: 20px;
-            height: 20px;
-            transition: fill 0.3s ease;
+        .stars-layout {
+            width: 139px;
+            height: 24px;
+            display: flex;
+            gap: 4.76px;
         }
 
-        .testimonial-card:hover .testimonial-stars svg {
-            fill: #FFD700;
+        .star {
+            width: 23.97px;
+            height: 24px;
+            background: #EBEBEB;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            transition: all 300ms ease-out;
+        }
+
+        .testimonial-card:hover .star {
+            background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
         }
 
         .testimonial-text {
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
-            font-size: clamp(14px, 2vw, 18px);
+            font-size: clamp(18px, 2vw, 24px);
             line-height: 150%;
-            color: #070F29;
-            flex: 1;
+            letter-spacing: -2%;
+            color: rgba(7, 15, 41, 0.5);
+            transition: all 300ms ease-out;
         }
 
-        .testimonial-author {
+        .testimonial-card:hover .testimonial-text {
+            color: #070F29;
+        }
+
+        .ceo-container {
+            width: 100%;
+            height: 128px;
+            border-radius: 100px;
+            padding: 16px;
+            background: #F5F5F5;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-sizing: border-box;
+        }
+
+        .ceo-image {
+            width: 96px;
+            height: 96px;
+            border-radius: 100px;
+            background: #CCCCCC;
+            flex-shrink: 0;
+        }
+
+        .ceo-text-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .ceo-name {
             font-family: 'Creato Display', sans-serif;
-            font-weight: 600;
-            font-size: clamp(16px, 2.5vw, 20px);
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 100%;
+            letter-spacing: -2%;
             color: #070F29;
         }
 
-        .testimonial-role {
+        .ceo-title {
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
-            font-size: clamp(12px, 2vw, 16px);
-            color: rgba(7, 15, 41, 0.6);
+            font-size: 24px;
+            line-height: 100%;
+            color: #7E828F;
         }
 
         /* Added responsive media queries for all sections */
@@ -1019,9 +1067,7 @@
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
-            height: auto;
-            padding: 64px 20px;
-            margin-top: 80px;
+            padding: 96px 160px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1029,37 +1075,39 @@
 
         .cta-container {
             width: 100%;
-            max-width: 1000px;
-            gap: 32px;
-            border-radius: 24px;
+            max-width: 1600px;
+            min-height: 444px;
+            border-radius: 48px;
+            background: #F5F5F5;
             padding: 48px;
-            background: linear-gradient(135deg, #5ACAF8 0%, #89A6F1 50%, #B37EFB 100%);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            box-shadow: 0 10px 30px rgba(37, 91, 236, 0.3);
+            justify-content: center;
+            gap: 48px;
+            box-sizing: border-box;
         }
 
         .cta-title {
             font-family: 'Creato Display', sans-serif;
             font-weight: 800;
-            font-size: clamp(36px, 6vw, 76px);
-            line-height: 1.2;
+            font-size: clamp(36px, 5vw, 76px);
+            line-height: 100px;
+            letter-spacing: -2%;
             text-align: center;
-            color: #FFFFFF;
+            color: #070F29;
         }
 
         .consult-btn {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            width: auto;
-            height: auto;
-            padding: 16px 32px;
+            gap: 8px;
+            width: 360px;
+            height: 84px;
+            padding: 16px;
             box-sizing: border-box;
-            background: #FFFFFF;
-            border-radius: 100px;
+            background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
+            border-radius: 160px;
             text-decoration: none;
             transition: transform 0.2s ease;
         }
@@ -1075,13 +1123,12 @@
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
         }
 
         .text-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 0px;
             justify-content: center;
         }
 
@@ -1091,101 +1138,104 @@
             font-size: 14px;
             line-height: 1.2;
             text-align: left;
-            color: #FFFFFF;
+            color: #EBEBEB;
         }
 
         .main-text {
             font-family: 'Creato Display', sans-serif;
             font-weight: 700;
-            font-size: 20px;
-            line-height: 1.2;
+            font-size: 18px;
+            line-height: 16px;
             letter-spacing: -0.24px;
-            color: #070F29;
+            color: #F5F5F5;
+            padding-bottom: 2px;
         }
 
         /* Footer Styles */
-        footer {
+        .footer {
             width: 100%;
             max-width: 1920px;
             margin: 0 auto;
-            height: auto;
-            padding: 64px 20px;
-            margin-top: 80px;
-            background: #070F29;
+            padding: 96px 160px;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
         }
 
-        .footer-top {
+        .footer-first-layout {
             width: 100%;
             max-width: 1600px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 48px;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 24px;
         }
 
-        .footer-heading {
+        .footer-text {
             font-family: 'Creato Display', sans-serif;
             font-weight: 500;
-            font-size: clamp(18px, 3vw, 24px);
-            line-height: 1.2;
-            color: #FFFFFF;
-            max-width: 500px;
+            font-size: clamp(18px, 2vw, 24px);
+            line-height: 100%;
+            color: #070F29;
+            max-width: 600px;
         }
 
         .email-field {
             display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            width: 100%;
-            max-width: 550px;
-            margin-left: auto;
+            align-items: center;
+            gap: 8px;
         }
 
         .input-wrapper {
-            flex: 1;
-            min-width: 250px;
+            position: relative;
+            width: 360px;
             height: 48px;
-            border-radius: 100px;
-            border: 1px solid #4A4A4A;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: #1a1a1a;
         }
 
-        .input-icon {
+        .profile-icon {
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 20px;
             height: 20px;
+            pointer-events: none;
         }
 
         .email-input {
-            flex: 1;
-            border: none;
-            outline: none;
+            width: 100%;
+            height: 100%;
+            border-radius: 100px;
+            border: 1px solid #EBEBEB;
+            padding: 14px 24px 14px 54px;
             font-family: 'Creato Display', sans-serif;
             font-weight: 400;
             font-size: 14px;
             line-height: 120%;
-            color: #FFFFFF;
-            background: transparent;
+            color: rgba(7, 15, 41, 0.5);
+            box-sizing: border-box;
+            outline: none;
         }
 
         .subscribe-btn {
+            width: 146px;
             height: 48px;
-            padding: 8px 20px;
+            border-radius: 100px;
             background: linear-gradient(90deg, #255BEC 0%, #780AFF 100%);
-            border: none;
-            cursor: pointer;
+            padding: 8px 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 100px;
             gap: 8px;
-            flex-shrink: 0;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .subscribe-btn:hover {
+            transform: translateY(-2px);
         }
 
         .subscribe-text {
@@ -1199,6 +1249,111 @@
         .send-icon {
             width: 24px;
             height: 24px;
+        }
+
+        /* Added responsive media queries for all new sections */
+        @media (max-width: 1440px) {
+            .who-we-serve-section,
+            .testimonials-section,
+            .cta-section,
+            .footer {
+                padding: 80px 80px;
+            }
+
+            .testimonial-card {
+                min-width: 380px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .who-we-serve-section,
+            .testimonials-section,
+            .cta-section,
+            .footer {
+                padding: 60px 40px;
+            }
+
+            .cards-section,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .testimonial-card {
+                min-width: 100%;
+            }
+
+            .consult-btn {
+                width: 320px;
+                height: 75px;
+            }
+
+            .footer-first-layout {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .who-we-serve-section,
+            .testimonials-section,
+            .cta-section,
+            .footer {
+                padding: 40px 20px;
+            }
+
+            .serve-title {
+                font-size: 48px;
+                line-height: 60px;
+            }
+
+            .badge {
+                font-size: 18px;
+                padding: 6px 12px;
+            }
+
+            .consult-btn {
+                width: 300px;
+                height: 70px;
+            }
+
+            .input-wrapper {
+                width: 100%;
+            }
+
+            .email-field {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .subscribe-btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .serve-title {
+                font-size: 36px;
+                line-height: 48px;
+            }
+
+            .cta-title {
+                font-size: 32px;
+                line-height: 42px;
+            }
+
+            .consult-btn {
+                width: 280px;
+                height: 65px;
+            }
+
+            .ceo-name {
+                font-size: 24px;
+            }
+
+            .ceo-title {
+                font-size: 18px;
+            }
         }
 
         /* Animation */
@@ -1228,16 +1383,9 @@
             <!-- Navigation Links -->
             <div class="nav-items-wrapper">
                 <div class="nav-links">
-                    <a href="#" class="nav-item">
-                        <span>Services</span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M7.99957 11.1667C7.86686 11.1673 7.7395 11.1144 7.64624 11.02L2.31291 5.68666C2.12933 5.48966 2.13475 5.18266 2.32516 4.99225C2.51557 4.80184 2.82257 4.79642 3.01957 4.98L7.99957 9.96L12.9796 4.98C13.1766 4.79642 13.4836 4.80184 13.674 4.99225C13.8644 5.18266 13.8698 5.48966 13.6862 5.68666L8.35291 11.02C8.25965 11.1144 8.13228 11.1673 7.99957 11.1667Z"
-                                fill="#070F29" fill-opacity="0.5" />
-                        </svg>
-                    </a>
+                    <a href="#" class="nav-item">Services</a>
                     <a href="#" class="nav-item">DesignOS</a>
-                    <a href="#" class="nav-item">About Us</a>
+                    <a href="#" class="nav-item">About us</a>
                     <a href="#" class="nav-item">Insights</a>
                 </div>
             </div>
@@ -1246,11 +1394,8 @@
             <a href="#" class="book-call-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
-                        d="M20.2499 14.93V18.23C20.2499 19.46 19.1599 20.4 17.9399 20.23C10.5999 19.21 4.78991 13.4 3.76991 6.06001C3.59991 4.84001 4.53991 3.75001 5.76991 3.75001H9.06991C9.30643 3.74893 9.53568 3.83173 9.71693 3.98369C9.89818 4.13564 10.0197 4.34693 10.0599 4.58001L10.4499 6.77001C10.5899 7.54001 10.2699 8.32001 9.62991 8.77001L7.77991 10.36C9.20991 12.77 11.2399 14.78 13.6599 16.2L15.2299 14.38C15.6799 13.74 16.4599 13.42 17.2299 13.56L19.4199 13.95C19.8999 14.04 20.2499 14.45 20.2499 14.94V14.93Z"
-                        fill="white" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                        d="M20.1198 10.0299C20.1198 8.40945 19.476 6.85535 18.3302 5.7095C17.1843 4.56365 15.6302 3.91992 14.0098 3.91992M16.6798 10.0299C16.6798 8.54992 15.4798 7.35992 14.0098 7.35992"
-                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        d="M13.7489 2.99902C14.0189 2.99902 14.2489 3.19902 14.2989 3.45902C14.3489 3.72902 14.1889 3.98902 13.9289 4.07902C9.50894 5.46902 6.24894 9.43902 6.00894 14.039C5.95894 15.039 6.09894 16.019 6.41894 16.939C6.53894 17.279 6.66894 17.599 6.81894 17.919C6.82894 17.939 6.83894 17.959 6.84894 17.979C7.11894 18.539 7.42894 19.059 7.78894 19.549C7.94894 19.759 7.93894 20.059 7.75894 20.259L5.99894 22.249C5.89894 22.359 5.75894 22.419 5.60894 22.419C5.50894 22.419 5.39894 22.389 5.30894 22.329C4.93894 22.079 4.58894 21.799 4.25894 21.499C1.97894 19.419 0.698938 16.529 0.698938 13.429C0.698938 6.38902 6.37894 0.589023 13.3889 0.0390234C13.5089 0.0290234 13.6289 0.0390234 13.7389 0.0790234C13.7389 0.0890234 13.7489 0.0990234 13.7489 0.109023C13.9089 0.189023 14.0189 0.349023 14.0189 0.529023V2.99902H13.7489Z" fill="white"/>
+                    <path d="M23.2997 13.4297C23.2997 16.5297 22.0197 19.4197 19.7397 21.4997C19.4097 21.7997 19.0597 22.0797 18.6897 22.3297C18.5997 22.3897 18.4897 22.4197 18.3897 22.4197C18.2397 22.4197 18.0997 22.3597 17.9997 22.2497L16.2397 20.2597C16.0597 20.0597 16.0497 19.7597 16.2097 19.5497C16.5697 19.0597 16.8797 18.5397 17.1497 17.9797C17.1597 17.9597 17.1697 17.9397 17.1797 17.9197C17.3297 17.5997 17.4597 17.2797 17.5797 16.9397C17.8997 16.0197 18.0397 15.0397 17.9897 14.0397C17.7497 9.43969 14.4897 5.46969 10.0697 4.07969C9.80973 3.98969 9.64973 3.72969 9.69973 3.45969C9.74973 3.18969 9.97973 2.99969 10.2497 2.99969V0.529688C10.2497 0.349688 10.3597 0.189688 10.5197 0.109688C10.5197 0.0996875 10.5297 0.0896875 10.5297 0.0796875C10.6397 0.0396875 10.7597 0.0296875 10.8797 0.0396875C17.8897 0.589688 23.5697 6.38969 23.5697 13.4297H23.2997Z" fill="white"/>
                 </svg>
                 <span class="btn-text">Book a call</span>
             </a>
@@ -1408,101 +1553,118 @@
     <!-- Who We Serve Section -->
     <section class="who-we-serve-section">
         <h2 class="section-title">Who we serve?</h2>
+        
         <div class="cards-section">
             <!-- E-Commerce Card -->
             <div class="serve-card card-ecommerce">
                 <div class="wallet-box">
-                    <img src="/images/e5a2be47d967bbb5c7c3bdaa2786f74e154ade0b-20-282-29.gif" alt="E-Commerce" class="wallet-gif">
+                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="Wallet" class="wallet-gif">
                 </div>
+                
                 <div class="text-container">
-                    <h3 class="card-main-title">E-Commerce</h3>
+                    <h3 class="serve-title">E-Commerce</h3>
+                    
                     <div class="badges-row">
                         <div class="badge">Transaction Safety</div>
                         <div class="badge">99.5%</div>
                         <div class="badge">Payments</div>
                     </div>
-                    <p class="card-subtext">Delivering seamless and secure payment processing to boost customer trust and conversion rates</p>
+                    
+                    <p class="serve-subtext">Delivering seamless and secure payment processing to boost customer trust and conversion rates</p>
+                    
+                    <a href="#" class="serve-btn">
+                        <div class="circle-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
+                            </svg>
+                        </div>
+                        <span class="serve-btn-text">Find out how</span>
+                    </a>
                 </div>
-                <a href="#" class="action-btn">
-                    <div class="circle-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
-                        </svg>
-                    </div>
-                    <span class="action-btn-text">Find out how</span>
-                </a>
             </div>
 
             <!-- Startups Card -->
             <div class="serve-card card-startups">
                 <div class="wallet-box">
-                    <img src="/images/9781f34f8e81dd5d4b677e993365f11066a2fc30.gif" alt="Startups" class="wallet-gif">
+                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="Wallet" class="wallet-gif">
                 </div>
+                
                 <div class="text-container">
-                    <h3 class="card-main-title">Startups</h3>
+                    <h3 class="serve-title">Startups</h3>
+                    
                     <div class="badges-row">
                         <div class="badge">Auth</div>
                         <div class="badge">Uptime</div>
                         <div class="badge">Ledgers</div>
                     </div>
-                    <p class="card-subtext">We build stable, secure systems built for scale and compliance</p>
+                    
+                    <p class="serve-subtext">We build stable, secure systems built for scale and compliance</p>
+                    
+                    <a href="#" class="serve-btn">
+                        <div class="circle-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
+                            </svg>
+                        </div>
+                        <span class="serve-btn-text">Learn more</span>
+                    </a>
                 </div>
-                <a href="#" class="action-btn">
-                    <div class="circle-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
-                        </svg>
-                    </div>
-                    <span class="action-btn-text">Learn more</span>
-                </a>
             </div>
 
             <!-- SaaS Founders Card -->
             <div class="serve-card card-saas">
                 <div class="wallet-box">
-                    <img src="/images/0515c18c2deb122f56f5dd59b13fc85053c218d9.gif" alt="SaaS" class="wallet-gif">
+                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="Wallet" class="wallet-gif">
                 </div>
+                
                 <div class="text-container">
-                    <h3 class="card-main-title">SaaS Founders</h3>
+                    <h3 class="serve-title">SaaS Founders</h3>
+                    
                     <div class="badges-row">
                         <div class="badge">Data Security</div>
                         <div class="badge">99.9%</div>
                         <div class="badge">Patient Records</div>
                     </div>
-                    <p class="card-subtext">Ensuring the integrity and confidentiality of patient data with cutting-edge encryption methods</p>
+                    
+                    <p class="serve-subtext">Ensuring the integrity and confidentiality of patient data with cutting-edge encryption methods</p>
+                    
+                    <a href="#" class="serve-btn">
+                        <div class="circle-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
+                            </svg>
+                        </div>
+                        <span class="serve-btn-text">Discover our approach</span>
+                    </a>
                 </div>
-                <a href="#" class="action-btn">
-                    <div class="circle-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
-                        </svg>
-                    </div>
-                    <span class="action-btn-text">Discover our approach</span>
-                </a>
             </div>
 
             <!-- EdTech Card -->
             <div class="serve-card card-edtech">
                 <div class="wallet-box">
-                    <img src="/images/jj-20logo-202.png" alt="EdTech" class="wallet-gif">
+                    <img src="19c3d51934dca5d48bfc694def6f10a712bedd99.gif" alt="Wallet" class="wallet-gif">
                 </div>
+                
                 <div class="text-container">
-                    <h3 class="card-main-title">EdTech</h3>
+                    <h3 class="serve-title">EdTech</h3>
+                    
                     <div class="badges-row">
                         <div class="badge">User Engagement</div>
                         <div class="badge">95%</div>
                         <div class="badge">Learning Analytics</div>
                     </div>
-                    <p class="card-subtext">Enhancing student outcomes through personalized learning experiences driven by real-time data</p>
+                    
+                    <p class="serve-subtext">Enhancing student outcomes through personalized learning experiences driven by real-time data</p>
+                    
+                    <a href="#" class="serve-btn">
+                        <div class="circle-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
+                            </svg>
+                        </div>
+                        <span class="serve-btn-text">Explore our solutions</span>
+                    </a>
                 </div>
-                <a href="#" class="action-btn">
-                    <div class="circle-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.0505 11.471L13.0505 4.47097C12.8575 4.28341 12.5792 4.21301 12.3203 4.28631C12.0614 4.3596 11.8613 4.56545 11.7953 4.82631C11.7293 5.08717 11.8075 5.36341 12.0005 5.55097L17.7105 11.251H4.48047C4.06626 11.251 3.73047 11.5868 3.73047 12.001C3.73047 12.4152 4.06626 12.751 4.48047 12.751H17.7005L12.0005 18.451C11.8575 18.5903 11.7769 18.7814 11.7769 18.981C11.7769 19.1806 11.8575 19.3717 12.0005 19.511C12.1383 19.6556 12.3307 19.7355 12.5305 19.731C12.7295 19.7319 12.9206 19.6526 13.0605 19.511L20.0605 12.511C20.3529 12.2182 20.3529 11.7438 20.0605 11.451L20.0505 11.471Z" fill="#070F29"/>
-                        </svg>
-                    </div>
-                    <span class="action-btn-text">Explore our solutions</span>
-                </a>
             </div>
         </div>
     </section>
@@ -1510,88 +1672,74 @@
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <h2 class="section-title">Testimonials</h2>
-        <div class="testimonials-container">
+        
+        <div class="testimonials-grid">
             <!-- Testimonial Card 1 -->
             <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
+                <div class="testimonial-text-layout">
+                    <div class="stars-layout">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
                     </div>
+                    
                     <p class="testimonial-text">We burned months with freelancers who ghosted us halfway through. JustJava came in, rebuilt the backend, and delivered our platform on a real timeline. Their structure and communication were a breath of fresh air—we finally felt like we had a real engineering team</p>
                 </div>
-                <div class="testimonial-author-container">
-                    <div class="testimonial-author">Simon Claw</div>
-                    <div class="testimonial-role">CEO, Company</div>
+                
+                <div class="ceo-container">
+                    <div class="ceo-image"></div>
+                    <div class="ceo-text-layout">
+                        <h4 class="ceo-name">Simon Claw</h4>
+                        <p class="ceo-title">CEO, Company</p>
+                    </div>
                 </div>
             </div>
 
             <!-- Testimonial Card 2 -->
             <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
+                <div class="testimonial-text-layout">
+                    <div class="stars-layout">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
                     </div>
+                    
                     <p class="testimonial-text">We burned months with freelancers who ghosted us halfway through. JustJava came in, rebuilt the backend, and delivered our platform on a real timeline. Their structure and communication were a breath of fresh air—we finally felt like we had a real engineering team</p>
                 </div>
-                <div class="testimonial-author-container">
-                    <div class="testimonial-author">Jane Smith</div>
-                    <div class="testimonial-role">CEO, TechCorp</div>
+                
+                <div class="ceo-container">
+                    <div class="ceo-image"></div>
+                    <div class="ceo-text-layout">
+                        <h4 class="ceo-name">Simon Claw</h4>
+                        <p class="ceo-title">CEO, Company</p>
+                    </div>
                 </div>
             </div>
 
             <!-- Testimonial Card 3 -->
             <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <div class="testimonial-stars">
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L14.09 8.26L20 9.27L15.82 13.14L16.91 19.02L12 15.77L7.09 19.02L8.18 13.14L4 9.27L9.91 8.26L12 2Z"/>
-                        </svg>
+                <div class="testimonial-text-layout">
+                    <div class="stars-layout">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
                     </div>
+                    
                     <p class="testimonial-text">We burned months with freelancers who ghosted us halfway through. JustJava came in, rebuilt the backend, and delivered our platform on a real timeline. Their structure and communication were a breath of fresh air—we finally felt like we had a real engineering team</p>
                 </div>
-                <div class="testimonial-author-container">
-                    <div class="testimonial-author">David Johnson</div>
-                    <div class="testimonial-role">Founder, StartupXYZ</div>
+                
+                <div class="ceo-container">
+                    <div class="ceo-image"></div>
+                    <div class="ceo-text-layout">
+                        <h4 class="ceo-name">Simon Claw</h4>
+                        <p class="ceo-title">CEO, Company</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1601,12 +1749,14 @@
     <section class="cta-section">
         <div class="cta-container">
             <h2 class="cta-title">Ready to take your software to the next level?</h2>
+            
             <a href="#" class="consult-btn">
                 <div class="arrow-box">
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22.2883 10.154L12.3888 10.154C11.8519 10.1552 11.3566 10.4428 11.0893 10.9083C10.8219 11.3739 10.8233 11.9467 11.0928 12.4109C11.3623 12.8752 11.859 13.1604 12.3958 13.1592L18.6537 13.1521L10.5857 21.2202C9.99987 21.806 9.99987 22.7557 10.5857 23.3415C11.1714 23.9273 12.1212 23.9273 12.707 23.3415L20.7751 15.2734L20.768 21.5313C20.7684 22.1376 21.1337 22.684 21.6938 22.9161C22.2539 23.1482 22.8986 23.0203 23.3277 22.592C23.6081 22.3031 23.7588 21.9125 23.7449 21.5101L23.7449 11.6106C23.7444 10.7829 23.0735 10.1121 22.2458 10.1115L22.2883 10.154Z" fill="white"/>
                     </svg>
                 </div>
+                
                 <div class="text-wrapper">
                     <span class="sub-text">Ready for a real scale up</span>
                     <span class="main-text">Book a free consultation call</span>
@@ -1616,22 +1766,24 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-top">
-            <p class="footer-heading">Stay in the loop. Get product updates, insights, and stories—straight to your inbox</p>
+    <footer class="footer">
+        <div class="footer-first-layout">
+            <p class="footer-text">Stay in the loop. Get product updates, insights, and stories—straight to your inbox</p>
+            
             <div class="email-field">
                 <div class="input-wrapper">
-                    <svg class="input-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="profile-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.0007 9.99935C12.3018 9.99935 14.1673 8.13387 14.1673 5.83268C14.1673 3.5315 12.3018 1.66602 10.0007 1.66602C7.69946 1.66602 5.83398 3.5315 5.83398 5.83268C5.83398 8.13387 7.69946 9.99935 10.0007 9.99935Z" stroke="#070F29" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M17.1585 18.3333C17.1585 15.1083 13.9501 12.5 10.0001 12.5C6.05013 12.5 2.8418 15.1083 2.8418 18.3333" stroke="#070F29" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     <input type="email" class="email-input" placeholder="Enter your email">
                 </div>
+                
                 <button class="subscribe-btn">
+                    <span class="subscribe-text">Subscribe</span>
                     <svg class="send-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.7896 0.0744176C18.8056 -0.280582 19.7816 0.695418 19.4266 1.71142L13.5016 18.6414C13.1166 19.7394 11.5866 19.8014 11.1146 18.7384L8.25561 12.3064L12.2796 8.28142C12.4121 8.13924 12.4842 7.9512 12.4808 7.7569C12.4774 7.56259 12.3986 7.37721 12.2612 7.2398C12.1238 7.10238 11.9384 7.02367 11.7441 7.02024C11.5498 7.01681 11.3618 7.08894 11.2196 7.22142L7.19461 11.2454L0.762611 8.38642C-0.300389 7.91342 -0.23739 6.38442 0.85961 5.99942L17.7896 0.0744176Z" fill="#F5F5F5"/>
                     </svg>
-                    <span class="subscribe-text">Subscribe</span>
                 </button>
             </div>
         </div>
